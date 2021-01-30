@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Assets/Julio.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Julio.gd" type="Script" id=2]
@@ -10,24 +10,40 @@
 [ext_resource path="res://Assets/building2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/trash.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Imports/char.fbx" type="PackedScene" id=10]
-
-[sub_resource type="BoxShape" id=3]
-
-[sub_resource type="SpatialMaterial" id=4]
-albedo_color = Color( 0.478431, 0.478431, 0.478431, 1 )
-
-[sub_resource type="CubeMesh" id=5]
-material = SubResource( 4 )
+[ext_resource path="res://Assets/ball.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/cat.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/dock.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/dragon.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/fire.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/ocean.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/path.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/chalk.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Assets/tree.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Assets/tent.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/stone.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Assets/sand.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Assets/log.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Assets/bridge.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Assets/rod.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Assets/proximity.tscn" type="PackedScene" id=26]
 
 [sub_resource type="BoxShape" id=1]
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.478431, 0.478431, 0.478431, 1 )
+
+[sub_resource type="CubeMesh" id=3]
+material = SubResource( 2 )
+
+[sub_resource type="BoxShape" id=4]
+
+[sub_resource type="CubeMesh" id=5]
 
 [node name="Level" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.939693, 0.219846, -0.262003, 0, 0.766044, 0.642788, 0.34202, -0.604023, 0.719846, -26.3559, 59.966, 63.3753 )
+transform = Transform( 0.939693, 0.219846, -0.262002, 0, 0.766044, 0.642788, 0.34202, -0.604023, 0.719846, -13.2353, 57.1515, 65.6385 )
 fov = 30.0
 near = 0.31
 far = 159.4
@@ -40,37 +56,58 @@ script = ExtResource( 2 )
 transform = Transform( 453.073, 0, 0, 0, 1, 0, 0, 0, 426.192, 0, -1, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor/CollisionShape"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0 )
-mesh = SubResource( 5 )
+mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Box" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01912, 5.10074, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Box"]
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Box"]
-mesh = SubResource( 2 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="car" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -8 )
+transform = Transform( 0.0652638, 0, -0.997868, 0, 1, 0, 0.997868, 0, 0.0652638, 42.5235, 0, 74.9775 )
+
+[node name="car2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1644, 0, 62.5196 )
 
 [node name="lantern" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3842, 0, 6.40975 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97207, 0, 5.46333 )
+
+[node name="lantern2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97207, 0, 22.2746 )
+
+[node name="lantern3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97207, 0, 41.7412 )
+
+[node name="lantern4" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9024, 0, 58.0484 )
+
+[node name="lantern5" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9024, 0, 81.3897 )
+
+[node name="lantern6" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9024, 0, 104.027 )
 
 [node name="sign" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9942, -3.8147e-06, 19.5229 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.3968, -7.62939e-06, 43.4274 )
 
 [node name="char" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77566, 0.0430317, 6.43121 )
 
 [node name="trash" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13078, 0, 4.63492 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.51282, 0, -39.4729 )
+
+[node name="trash2" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.68, 0, 38.4007 )
 
 [node name="Road" type="Spatial" parent="."]
 
@@ -139,6 +176,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -72.5997, 0, -215.796 )
 [node name="road16" parent="Road" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -72.5997, 0, -235.796 )
 
+[node name="road23" parent="Road" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -72.5997, 0, -255.796 )
+
+[node name="road24" parent="Road" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -72.5997, 0, -268.78 )
+
 [node name="road_side" parent="Road" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 55 )
 
@@ -162,6 +205,18 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -45.637
 
 [node name="road_side5" parent="Road" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -65.6376, -7.62939e-06, -51.4922 )
+
+[node name="road_side9" parent="Road" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -41.8971, -7.62939e-06, -273.321 )
+
+[node name="road_side10" parent="Road" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -61.8971, -7.62939e-06, -273.321 )
+
+[node name="road_side11" parent="Road" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.45582, -7.62939e-06, -273.321 )
+
+[node name="road_side12" parent="Road" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -22.4558, -7.62939e-06, -273.321 )
 
 [node name="Buildings" type="Spatial" parent="."]
 
@@ -305,3 +360,51 @@ transform = Transform( 0.00773156, 0, 0.99997, 0, 1, 0, -0.99997, 0, 0.00773156,
 
 [node name="building16" parent="Buildings" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -92.2139, 0, -49.9983 )
+
+[node name="bridge" parent="." instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.4934, 0.0756311, -271.546 )
+
+[node name="ball" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 61.3136, -54.8391, 39.964 )
+
+[node name="cat" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.367, 0, 124.534 )
+
+[node name="chalk" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.648, 0, 124.546 )
+
+[node name="dock" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.3813, 7.62939e-06, 162.309 )
+
+[node name="dragon" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4834, 0, 150.821 )
+
+[node name="fire" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8253, 0, 141.505 )
+
+[node name="log" parent="." instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7333, 0, 134.636 )
+
+[node name="ocean" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1016.39 )
+
+[node name="path" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.6945, 7.62939e-06, 141.156 )
+
+[node name="tree" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9292, 0, 113.72 )
+
+[node name="tent" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6108, 0, 112.487 )
+
+[node name="stone" parent="." instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3218, 0, 93.171 )
+
+[node name="sand" parent="." instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -912.722 )
+
+[node name="rod" parent="." instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 0.189747, 0.981833, 0, -0.981833, 0.189747, 0, -1.52737e-06, 95.3752 )
+
+[node name="ProximityDetector" parent="." instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12343, 3.28303, 13.0688 )
