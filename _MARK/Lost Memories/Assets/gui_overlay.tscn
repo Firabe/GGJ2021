@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/Film.gd" type="Script" id=1]
+[ext_resource path="res://Assets/movies/Stadt V1_libtheora.ogv" type="VideoStream" id=2]
+[ext_resource path="res://scripts/GUI.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Bild.gd" type="Script" id=4]
+[ext_resource path="res://Assets/images/springspiel.png" type="Texture" id=5]
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="FilmExample" type="VideoPlayer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BildExample" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_clip_content = true
+texture = ExtResource( 5 )
+expand = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImgCloseTimer" type="Timer" parent="."]
+wait_time = 120.0
+one_shot = true
+__meta__ = {
+"_editor_description_": "Timer zum Schließen der Bilder. Wenn ein Bild geöffnet wird, dann schließt es sich automatisch wieder nach Ablauf des Timers"
+}
+[connection signal="finished" from="FilmExample" to="FilmExample" method="_on_FilmExample_finished"]
+[connection signal="timeout" from="ImgCloseTimer" to="BildExample" method="_on_ImgCloseTimer_timeout"]
