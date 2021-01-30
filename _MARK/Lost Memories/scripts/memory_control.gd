@@ -1,0 +1,35 @@
+extends Node
+
+var is_watching_memory = false
+var current_memory = null
+
+
+
+
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_accept"):
+		if is_watching_memory:
+			is_watching_memory = false
+			stop_watch_memory()
+		elif current_memory != null:
+			is_watching_memory = true
+			start_watch_memory()
+
+
+func start_watch_memory():
+	get_node(current_memory).start_watch()
+	
+func stop_watch_memory():
+	get_node(current_memory).end_watch()
+
+func set_available_memory(memory):
+	current_memory = memory
+
+func remove_memory(memory):
+	if (current_memory == memory):
+		if is_watching_memory:
+			stop_watch_memory()
+			is_watching_memory = false
+		current_memory = null
+
+

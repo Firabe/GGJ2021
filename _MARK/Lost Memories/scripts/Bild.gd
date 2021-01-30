@@ -11,11 +11,11 @@ func _ready():
 	hide()
 
 
-func show_image():
+func start_watch():
 	show()
 	get_parent().get_node("ImgCloseTimer").start()
 
-func hide_image():
+func end_watch():
 	hide()
 	get_parent().get_node("ImgCloseTimer").start()
 

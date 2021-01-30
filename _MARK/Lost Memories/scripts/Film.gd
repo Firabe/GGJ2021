@@ -11,11 +11,11 @@ func _ready():
 	hide()
 
 
-func start_movie():
+func start_watch():
 	show()
 	play()
 
-func end_movie():
+func end_watch():
 	hide()
 	stop()
 
