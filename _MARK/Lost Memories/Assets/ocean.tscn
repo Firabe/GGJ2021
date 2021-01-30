@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Imports/blue.material" type="Material" id=1]
+
+[sub_resource type="ArrayMesh" id=1]
+surfaces/0 = {
+"aabb": AABB( -75, 0, -75, 150, 1e-05, 150 ),
+"array_data": PoolByteArray( 0, 0, 150, 194, 0, 0, 0, 0, 0, 0, 150, 66, 0, 127, 0, 0, 127, 0, 0, 129, 0, 0, 0, 60, 0, 0, 150, 66, 0, 0, 0, 0, 0, 0, 150, 66, 0, 127, 0, 0, 127, 0, 0, 129, 0, 60, 0, 60, 0, 0, 150, 66, 0, 0, 0, 0, 0, 0, 150, 194, 0, 127, 0, 0, 127, 0, 0, 129, 0, 60, 0, 0, 0, 0, 150, 194, 0, 0, 0, 0, 0, 0, 150, 194, 0, 127, 0, 0, 127, 0, 0, 129, 0, 0, 0, 0 ),
+"array_index_data": PoolByteArray( 3, 0, 2, 0, 1, 0, 3, 0, 1, 0, 0, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 6,
+"material": ExtResource( 1 ),
+"name": "ocean2",
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 76, 2, 76 )
+
+[node name="ocean" type="StaticBody"]
+
+[node name="ocean3" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )
