@@ -16,7 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Lost Memories"
+run/main_scene="res://Level.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GuiOverlay="*res://Assets/gui_overlay.tscn"
 
 [rendering]
 
