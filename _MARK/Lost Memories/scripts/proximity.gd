@@ -1,6 +1,6 @@
 extends Spatial
 
-export(NodePath) var memory_name
+export(String) var memory_name
 
 # Declare member variables here. Examples:
 # var a = 2
