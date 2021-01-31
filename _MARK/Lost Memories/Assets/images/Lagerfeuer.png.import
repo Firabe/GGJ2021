@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lagerfeuer.png-849fe53b1516574ecfe8d8368e4eaf1b.stex"
+path="res://.import/lagerfeuer.png-40c36769dc267545483dfdc91d5ee390.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/images/Lagerfeuer.png"
-dest_files=[ "res://.import/Lagerfeuer.png-849fe53b1516574ecfe8d8368e4eaf1b.stex" ]
+source_file="res://Assets/images/lagerfeuer.png"
+dest_files=[ "res://.import/lagerfeuer.png-40c36769dc267545483dfdc91d5ee390.stex" ]
 
 [params]
 

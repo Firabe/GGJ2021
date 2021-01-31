@@ -47,7 +47,7 @@ albedo_color = Color( 0.588235, 0.682353, 0.470588, 1 )
 [sub_resource type="CubeMesh" id=5]
 material = SubResource( 4 )
 
-[sub_resource type="GIProbeData" id=8]
+[sub_resource type="GIProbeData" id=6]
 bounds = AABB( -207.21, -42.1793, -201.887, 414.42, 84.3586, 403.774 )
 cell_size = 3.23766
 to_cell_xform = Transform( 0.308865, 0, 0, 0, 0.308865, 0, 0, 0, 0.308865, 64, 13.0277, 62.3559 )
@@ -1985,7 +1985,7 @@ shadow_enabled = true
 
 [node name="GIProbe" type="GIProbe" parent="."]
 extents = Vector3( 207.21, 42.1793, 201.887 )
-data = SubResource( 8 )
+data = SubResource( 6 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 14 )
