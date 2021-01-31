@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lagerfeuer.png-40c36769dc267545483dfdc91d5ee390.stex"
+path="res://.import/Button-3.png-1d0c65a81f8618ab6740f6ebedfdb275.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/images/lagerfeuer.png"
-dest_files=[ "res://.import/lagerfeuer.png-40c36769dc267545483dfdc91d5ee390.stex" ]
+source_file="res://Assets/images/Button-3.png"
+dest_files=[ "res://.import/Button-3.png-1d0c65a81f8618ab6740f6ebedfdb275.stex" ]
 
 [params]
 
