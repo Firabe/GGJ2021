@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Assets/char.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/chalk.tscn" type="PackedScene" id=2]
@@ -25,6 +25,13 @@
 [ext_resource path="res://Assets/proximity.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Assets/bridge.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Assets/rod.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Imports/bread.fbx" type="PackedScene" id=26]
+[ext_resource path="res://Imports/murmel.fbx" type="PackedScene" id=27]
+[ext_resource path="res://Imports/papierflieger.fbx" type="PackedScene" id=28]
+[ext_resource path="res://Imports/feuerwerk.fbx" type="PackedScene" id=29]
+[ext_resource path="res://Imports/sandburg.fbx" type="PackedScene" id=30]
+[ext_resource path="res://Imports/schneeman.fbx" type="PackedScene" id=31]
+[ext_resource path="res://Imports/ice.fbx" type="PackedScene" id=32]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -39,10 +46,6 @@ albedo_color = Color( 0.588235, 0.682353, 0.470588, 1 )
 
 [sub_resource type="CubeMesh" id=5]
 material = SubResource( 4 )
-
-[sub_resource type="BoxShape" id=6]
-
-[sub_resource type="CubeMesh" id=7]
 
 [sub_resource type="GIProbeData" id=8]
 bounds = AABB( -207.21, -42.1793, -201.887, 414.42, 84.3586, 403.774 )
@@ -89,16 +92,6 @@ shape = SubResource( 1 )
 [node name="MeshInstance" type="MeshInstance" parent="Floor2/CollisionShape"]
 transform = Transform( -1.31495, 0, 0, 0, -1.31495, 0, 0, 0, -1.31495, -1.31514e-05, 0, -0.135374 )
 mesh = SubResource( 5 )
-material/0 = null
-
-[node name="Box" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01912, 5.10074, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Box"]
-shape = SubResource( 6 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Box"]
-mesh = SubResource( 7 )
 material/0 = null
 
 [node name="car" parent="." instance=ExtResource( 5 )]
@@ -2004,7 +1997,134 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75.4737, 0.0673393, -324.804 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.2531, 0.280906, -162.386 )
 
 [node name="log" parent="." instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.0923, 0.373305, -453.83 )
+transform = Transform( 1, 0, 0, 0, 0.191263, 0, 0, 0, 0.183685, 43.0923, 0.373305, -453.83 )
 
 [node name="sand" parent="." instance=ExtResource( 22 )]
 transform = Transform( 7.90958, 0, 0, 0, 1, 0, 0, 0, 1.23657, 3.38173, 3.8147e-06, -677.078 )
+
+[node name="Erinnerungen" type="Spatial" parent="."]
+
+[node name="Stadt" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9626, 0, 37.4573 )
+memory_name = "Stadt"
+memory_message = "Everyday life - I have wanderlust."
+
+[node name="Bridge" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.7654, 0, -227.846 )
+memory_name = "Bridge"
+memory_message = "I remember long car trips on vacation. But today I want to slow down."
+
+[node name="Wald" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.2672, 1.90735e-06, -407.703 )
+memory_name = "Wald"
+memory_message = "I can take a deep breath here. And move on."
+
+[node name="Strand" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09293, 2.03659, -743.175 )
+memory_name = "Strand"
+memory_message = "Enjoy the memories.."
+
+[node name="Angelsee" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -159.978, 2.03659, -400.606 )
+memory_name = "Bild"
+memory_message = "I used to go fishing here. This place is so peaceful."
+image_path = "anglesee.png"
+
+[node name="Drachen" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.55277, 2.03659, -618.663 )
+memory_name = "Bild"
+memory_message = "What are you doing on the ground? You belong in the air."
+image_path = "drachen.png"
+
+[node name="Eis essen" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4233, 2.03659, 38.3056 )
+memory_name = "Bild"
+memory_message = "Oh! I remember having Ice Cream from this place! What was my favorite flavor again?"
+image_path = "eis_essen.png"
+
+[node name="ice" parent="Erinnerungen/Eis essen" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 0.964636, -0.263587, 0, 0.263587, 0.964636, 1.09045, -1.34714, 1.05813 )
+
+[node name="enten" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -191.901, 2.03659, -395.615 )
+memory_name = "Bild"
+memory_message = "Sometimes we brought old bread to feed the ducks."
+image_path = "enten.png"
+
+[node name="bread" parent="Erinnerungen/enten" instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93736, -2.55782, 1.8616 )
+
+[node name="feuerwerk" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.0903, 2.03659, -678.78 )
+memory_name = "Bild"
+memory_message = "Wasn't there Fireworks here on new years? It was so pretty."
+image_path = "feuerwerk.png"
+
+[node name="feuerwerk" parent="Erinnerungen/feuerwerk" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 0.374752, 0.927125, 0, -0.927125, 0.374752, -0.0347595, -0.242484, 1.54919 )
+
+[node name="fussball" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -74.7157, 2.03659, -324.942 )
+memory_name = "Bild"
+memory_message = "I used to play football as a child! We used sticks to mark where the goal was."
+image_path = "fussball.png"
+
+[node name="haustier" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.9344, 2.03659, -77.1487 )
+memory_name = "Bild"
+memory_message = "What a sweet cat! This reminds me of the dog we had when I was a child. He was the best."
+image_path = "Haustier.jpg.png"
+
+[node name="lagerfeuer" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0961, 2.03659, -475.734 )
+memory_name = "Bild"
+memory_message = "A campfire! Hmm.. I can almost smell the burned marshmallows"
+image_path = "Lagerfeuer.png"
+
+[node name="murmeln" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.06385, 2.03659, -62.6915 )
+memory_name = "Bild"
+memory_message = "Marbles! I was the best at marble games."
+image_path = "murmeln.png"
+
+[node name="murmel" parent="Erinnerungen/murmeln" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81362, -1.83679, -0.0455322 )
+
+[node name="papierflieger" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2522, 2.03659, 71.3735 )
+memory_name = "Bild"
+memory_message = "Haha! I used to make so many paper planes, threw them from the bridge and watched how far they could fly."
+image_path = "papierflieger.png"
+
+[node name="papierflieger" parent="Erinnerungen/papierflieger" instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.217752, -1.70438, 0.426544 )
+
+[node name="sandburg" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.9389, 2.0366, -692.421 )
+memory_name = "Bild"
+memory_message = "At least once every summer I build a giant sand castle right here on this beach!"
+image_path = "sandburg.png"
+
+[node name="sandburg" parent="Erinnerungen/sandburg" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.416668, -2.20166, -0.478455 )
+
+[node name="schneemann" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.88082, 2.03661, -417.003 )
+memory_name = "Bild"
+memory_message = "I used to build a snowman here every winter. He had something like this as a hat."
+image_path = "schneemann.png"
+
+[node name="schneeman" parent="Erinnerungen/schneemann" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.259971, -1.96535, -0.701935 )
+
+[node name="springspiel" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.1613, 2.03657, -161.562 )
+memory_name = "Bild"
+memory_message = "Chalk? We used to draw games on the street with this!"
+image_path = "springspiel.png"
+
+[node name="tictactoe" parent="Erinnerungen" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.8728, 2.03659, -454.098 )
+memory_name = "Bild"
+memory_message = "Drawing in the sand with a stick was great. Sometimes we played Tic Tac Toe this way."
+image_path = "tictactoe.png"
