@@ -106,5 +106,10 @@ shape = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.30602, 0 )
 
 [node name="Camera" type="Camera" parent="CameraTarget"]
-transform = Transform( -1, 1.62921e-07, -2.82187e-07, 0, 0.866025, 0.5, 3.25841e-07, 0.5, -0.866025, 0, 11.9098, -22.9642 )
+transform = Transform( 0.999464, 0.0195302, -0.0262725, -0.00354861, 0.862452, 0.506126, 0.0325435, -0.505761, 0.862059, -11.9901, 20.4999, 28.4531 )
+fov = 32.0
+near = 0.13
+far = 215.7
 script = ExtResource( 7 )
+distance = 60
+height = 42

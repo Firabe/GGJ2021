@@ -1,7 +1,6 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://Assets/Julio.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scripts/Julio.gd" type="Script" id=2]
+[ext_resource path="res://Assets/char.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/road.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Imports/building1.fbx" type="PackedScene" id=4]
 [ext_resource path="res://Assets/car.tscn" type="PackedScene" id=5]
@@ -9,7 +8,6 @@
 [ext_resource path="res://Assets/sign.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/building2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/trash.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Imports/char.fbx" type="PackedScene" id=10]
 [ext_resource path="res://Assets/ball.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/cat.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/dock.tscn" type="PackedScene" id=13]
@@ -30,15 +28,15 @@ albedo_color = Color( 0.478431, 0.478431, 0.478431, 1 )
 [sub_resource type="CubeMesh" id=3]
 material = SubResource( 2 )
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.588235, 0.682353, 0.470588, 1 )
 
-[sub_resource type="CubeMesh" id=7]
-material = SubResource( 6 )
-
-[sub_resource type="BoxShape" id=4]
-
 [sub_resource type="CubeMesh" id=5]
+material = SubResource( 4 )
+
+[sub_resource type="BoxShape" id=6]
+
+[sub_resource type="CubeMesh" id=7]
 
 [sub_resource type="GIProbeData" id=8]
 bounds = AABB( -207.21, -42.1793, -201.887, 414.42, 84.3586, 403.774 )
@@ -53,15 +51,14 @@ propagation = 0.7
 [node name="Level" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
 
+[node name="char" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91016, 3.02421, 0 )
+
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.939693, 0.219846, -0.262002, 0, 0.766044, 0.642788, 0.34202, -0.604023, 0.719846, -13.2353, 57.1515, 65.6385 )
 fov = 30.0
 near = 0.31
 far = 159.4
-
-[node name="Julio" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00331688, 2.01707, -0.00472832 )
-script = ExtResource( 2 )
 
 [node name="Floor" type="StaticBody" parent="."]
 transform = Transform( 453.073, 0, 0, 0, 1, 0, 0, 0, 426.192, 0, -1, 0 )
@@ -78,22 +75,21 @@ material/0 = null
 transform = Transform( 453.073, 0, 0, 0, 1, 0, 0, 0, 426.192, 0, -2, -783.548 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor2/CollisionShape"]
 transform = Transform( -1.31495, 0, 0, 0, -1.31495, 0, 0, 0, -1.31495, 0, 0, -0.135018 )
-mesh = SubResource( 7 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="Box" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01912, 5.10074, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Box"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Box"]
-mesh = SubResource( 5 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="car" parent="." instance=ExtResource( 5 )]
@@ -152,9 +148,6 @@ transform = Transform( 0.999984, 0, 0.00574173, 0, 1, 0, -0.00574173, 0, 0.99998
 
 [node name="sign" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.3968, -7.62939e-06, 43.4274 )
-
-[node name="char" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77566, 0.0430317, 6.43121 )
 
 [node name="trash" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.51282, 0, -39.4729 )
