@@ -22,7 +22,7 @@ func start_watch_memory():
 func stop_watch_memory():
 	get_node(current_memory).end_watch()
 
-func set_available_memory(memory):
+func set_available_memory(memory, message):
 	current_memory = memory
 
 func remove_memory(memory):

@@ -1,6 +1,7 @@
 extends Spatial
 
 export(String) var memory_name
+export(String) var memory_message
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -19,7 +20,7 @@ func _ready():
 
 func _on_Area_body_entered(body):
 	var mem_control = get_node("/root/GuiOverlay")
-	mem_control.set_available_memory(memory_name)
+	mem_control.set_available_memory(memory_name, memory_message)
 
 
 func _on_Area_body_exited(body):
