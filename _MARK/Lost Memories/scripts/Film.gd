@@ -21,4 +21,5 @@ func end_watch():
 
 
 func _on_FilmExample_finished():
+	get_parent().memory_has_finished()
 	hide()

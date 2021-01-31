@@ -15,7 +15,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 memory_name = "FilmExample"
-memory_message = "Space"
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 1 )

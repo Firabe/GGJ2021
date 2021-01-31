@@ -16,14 +16,23 @@ func _unhandled_input(event):
 			start_watch_memory()
 
 
+func memory_has_finished():
+	is_watching_memory = false
+
 func start_watch_memory():
 	get_node(current_memory).start_watch()
+	$Music.playMemorySound()
 	
 func stop_watch_memory():
 	get_node(current_memory).end_watch()
+	
+func queue_music(number):
+	$Music.queueMusic(number)
 
 func set_available_memory(memory, message):
 	current_memory = memory
+	$Message.text = message
+	$Message.show()
 
 func remove_memory(memory):
 	if (current_memory == memory):
@@ -31,5 +40,6 @@ func remove_memory(memory):
 			stop_watch_memory()
 			is_watching_memory = false
 		current_memory = null
+		$Message.hide()
 
 

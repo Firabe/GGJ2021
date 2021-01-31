@@ -13,12 +13,15 @@ func _ready():
 
 func start_watch():
 	show()
-	get_parent().get_node("ImgCloseTimer").start()
+	var timer = get_parent().get_node("ImgCloseTimer")
+	timer.connect("timeout", self, "_on_ImgCloseTimer_timeout")
+	timer.start()
 
 func end_watch():
 	hide()
-	get_parent().get_node("ImgCloseTimer").start()
+	get_parent().get_node("ImgCloseTimer").stop()
 
 
 func _on_ImgCloseTimer_timeout():
+	get_parent().memory_has_finished()
 	hide()
