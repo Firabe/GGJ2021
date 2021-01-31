@@ -2,9 +2,11 @@ extends Node
 
 var is_watching_memory = false
 var current_memory = null
+var can_move = false
 
 
-
+func can_move():
+	return can_move
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_accept"):
@@ -28,6 +30,9 @@ func stop_watch_memory():
 	
 func queue_music(number):
 	$Music.queueMusic(number)
+	
+func change_ambient(path):
+	$Music.changeAmbient()
 
 func set_available_memory(memory, message):
 	current_memory = memory
@@ -43,3 +48,8 @@ func remove_memory(memory):
 		$Message.hide()
 
 
+
+
+func _on_Button_pressed():
+	$MenuScreen.hide()
+	can_move = true

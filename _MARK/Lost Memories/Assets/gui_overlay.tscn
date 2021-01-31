@@ -69,5 +69,24 @@ stream = ExtResource( 7 )
 [node name="Ambient" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 9 )
 autoplay = true
+
+[node name="MenuScreen" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="MenuScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -19.0
+margin_top = -10.0
+margin_right = 19.0
+margin_bottom = 10.0
+text = "Play"
 [connection signal="finished" from="FilmExample" to="FilmExample" method="_on_FilmExample_finished"]
 [connection signal="finished" from="Music" to="Music" method="_on_Music_finished"]
+[connection signal="pressed" from="MenuScreen/Button" to="." method="_on_Button_pressed"]
