@@ -50,8 +50,10 @@ func remove_memory(memory):
 		$Message.hide()
 
 
-
-
-func _on_Button_pressed():
+func _on_TextureButton_pressed():
 	$MenuScreen.hide()
+	$Intro.start_watch("")
+
+
+func _on_Intro_finished():
 	can_move = true

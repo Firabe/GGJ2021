@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/Film.gd" type="Script" id=1]
 [ext_resource path="res://Assets/movies/Wald_Blur_final.ogv" type="VideoStream" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://Assets/movies/Stadt_3.ogv" type="VideoStream" id=11]
 [ext_resource path="res://Assets/movies/Intro_Blur_final.ogv" type="VideoStream" id=12]
 [ext_resource path="res://Assets/movies/Strand_2.ogv" type="VideoStream" id=13]
+[ext_resource path="res://Assets/images/Cover.jpg" type="Texture" id=14]
+[ext_resource path="res://Assets/images/Button-hover.png" type="Texture" id=15]
+[ext_resource path="res://Assets/images/Button-pressed.png" type="Texture" id=16]
+[ext_resource path="res://Assets/images/Button-normal.png" type="Texture" id=17]
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -117,24 +121,32 @@ autoplay = true
 [node name="MenuScreen" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+texture = ExtResource( 14 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="MenuScreen"]
+[node name="TextureButton" type="TextureButton" parent="MenuScreen"]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.98
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -19.0
-margin_top = -10.0
-margin_right = 19.0
-margin_bottom = 10.0
-text = "Play"
+anchor_bottom = 0.98
+margin_left = -228.0
+margin_top = -98.0
+margin_right = 228.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 15 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="finished" from="Stadt" to="Stadt" method="_on_FilmExample_finished"]
 [connection signal="finished" from="Bridge" to="Bridge" method="_on_FilmExample_finished"]
 [connection signal="finished" from="Intro" to="Intro" method="_on_FilmExample_finished"]
+[connection signal="finished" from="Intro" to="." method="_on_Intro_finished"]
 [connection signal="finished" from="Wald" to="Wald" method="_on_FilmExample_finished"]
 [connection signal="finished" from="Strand" to="Strand" method="_on_FilmExample_finished"]
 [connection signal="finished" from="Music" to="Music" method="_on_Music_finished"]
-[connection signal="pressed" from="MenuScreen/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="MenuScreen/TextureButton" to="." method="_on_TextureButton_pressed"]

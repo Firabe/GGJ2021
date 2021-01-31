@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lagerfeuer.png-849fe53b1516574ecfe8d8368e4eaf1b.stex"
+path="res://.import/Button-hover.png-4892f4e0de915b10af2a10d8f39b2a94.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/images/Lagerfeuer.png"
-dest_files=[ "res://.import/Lagerfeuer.png-849fe53b1516574ecfe8d8368e4eaf1b.stex" ]
+source_file="res://Assets/images/Button-hover.png"
+dest_files=[ "res://.import/Button-hover.png-4892f4e0de915b10af2a10d8f39b2a94.stex" ]
 
 [params]
 

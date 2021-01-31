@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/proximity.gd" type="Script" id=1]
 
 [sub_resource type="CylinderShape" id=1]
-radius = 4.0008
+radius = 9.78469
 height = 8.85324
 
 [node name="Area" type="Area"]
