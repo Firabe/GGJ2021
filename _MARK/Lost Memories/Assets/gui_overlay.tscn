@@ -50,7 +50,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Brücke" type="VideoPlayer" parent="."]
+[node name="Bridge" type="VideoPlayer" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -132,7 +132,7 @@ margin_right = 19.0
 margin_bottom = 10.0
 text = "Play"
 [connection signal="finished" from="Stadt" to="Stadt" method="_on_FilmExample_finished"]
-[connection signal="finished" from="Brücke" to="Brücke" method="_on_FilmExample_finished"]
+[connection signal="finished" from="Bridge" to="Bridge" method="_on_FilmExample_finished"]
 [connection signal="finished" from="Intro" to="Intro" method="_on_FilmExample_finished"]
 [connection signal="finished" from="Wald" to="Wald" method="_on_FilmExample_finished"]
 [connection signal="finished" from="Strand" to="Strand" method="_on_FilmExample_finished"]
