@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/Film.gd" type="Script" id=1]
 [ext_resource path="res://Assets/movies/Stadt V1_libtheora.ogv" type="VideoStream" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://scripts/Bild.gd" type="Script" id=4]
 [ext_resource path="res://Assets/images/springspiel.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Music.gd" type="Script" id=6]
-[ext_resource path="res://Sounds/ErinnerungSound2.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sounds/Harp.wav" type="AudioStream" id=7]
 [ext_resource path="res://Sounds/Music/track1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sounds/Ambient/city.wav" type="AudioStream" id=9]
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -59,8 +60,14 @@ __meta__ = {
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+autoplay = true
 script = ExtResource( 6 )
 
 [node name="SoundMemory" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 7 )
+
+[node name="Ambient" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource( 9 )
+autoplay = true
 [connection signal="finished" from="FilmExample" to="FilmExample" method="_on_FilmExample_finished"]
+[connection signal="finished" from="Music" to="Music" method="_on_Music_finished"]
