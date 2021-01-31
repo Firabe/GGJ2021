@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Assets/char.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/chalk.tscn" type="PackedScene" id=2]
@@ -20,7 +20,8 @@
 [ext_resource path="res://Assets/fire.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Assets/tree.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Assets/log.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Assets/sand.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Assets/stone.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Imports/sand.fbx" type="PackedScene" id=22]
 [ext_resource path="res://Assets/bridge.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Assets/rod.tscn" type="PackedScene" id=25]
 
@@ -629,10 +630,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 61.3136, -54.8391, 39.964 )
 transform = Transform( 0.871488, 0, 0.490417, 0, 1, 0, -0.490417, 0, 0.871488, -58.9022, 8.10823, -76.3308 )
 
 [node name="ocean" parent="." instance=ExtResource( 16 )]
-transform = Transform( 38.3047, 0, 0, 0, 1, 0, 0, 0, 10.1624, 0, 0.666668, -1481.73 )
-
-[node name="sand" parent="." instance=ExtResource( 22 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55965, -663.933 )
+transform = Transform( 38.3047, 0, 0, 0, 1, 0, 0, 0, 10.1624, 0, 0.666668, -1515.88 )
 
 [node name="path" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.1495, 0, -315.064 )
@@ -698,7 +696,25 @@ transform = Transform( 0.971013, 0, -0.239025, 0, 1, 0, 0.239025, 0, 0.971013, 2
 transform = Transform( 0.0432357, 0, -0.999065, 0, 1, 0, 0.999065, 0, 0.0432357, 72.9448, 5.73286, -458.28 )
 
 [node name="dragon" parent="." instance=ExtResource( 15 )]
-transform = Transform( 0.0398701, 0, 0.999205, 0, 1, 0, -0.999205, 0, 0.0398701, -11.951, -0.555419, -564.616 )
+transform = Transform( 0.0398701, 0, 0.999205, 0, 1, 0, -0.999205, 0, 0.0398701, -9.95688, 0.161929, -617.479 )
+
+[node name="stone" parent="dragon" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, -1.86265e-08, 0, 1, 0, 1.86265e-08, 0, 1, 9.72223, -0.196797, -4.43787 )
+
+[node name="stone2" parent="dragon" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, -2.6077e-08, 0, 1, 0, 2.6077e-08, 0, 1, -25.8691, -0.196797, 4.10134 )
+
+[node name="stone3" parent="dragon" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, -3.35276e-08, 0, 1, 0, 3.35276e-08, 0, 1, -5.85638, -0.196797, 69.1891 )
+
+[node name="stone4" parent="dragon" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, -5.58794e-08, 0, 1, 0, 5.58794e-08, 0, 1, 38.5378, -0.196801, 109.472 )
+
+[node name="stone5" parent="dragon" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, -6.33299e-08, 0, 1, 0, 6.33299e-08, 0, 1, 56.7412, -0.196801, 105.497 )
+
+[node name="stone6" parent="dragon" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, -7.07805e-08, 0, 1, 0, 7.07805e-08, 0, 1, 33.4738, -0.196801, 89.4223 )
 
 [node name="fire" parent="." instance=ExtResource( 18 )]
 transform = Transform( 0.0398701, 0, 0.999205, 0, 1, 0, -0.999205, 0, 0.0398701, 57.0075, -1.05038, -474.448 )
@@ -1133,3 +1149,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.2531, 0.280906, -162.386 )
 
 [node name="log" parent="." instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.0923, 0.373305, -453.83 )
+
+[node name="sand" parent="." instance=ExtResource( 22 )]
+transform = Transform( 7.90958, 0, 0, 0, 1, 0, 0, 0, 1.23657, 3.38173, 3.8147e-06, -677.078 )
