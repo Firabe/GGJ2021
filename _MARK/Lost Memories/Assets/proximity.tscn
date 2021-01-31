@@ -6,20 +6,19 @@
 radius = 4.0008
 height = 8.85324
 
-[node name="ProximityDetector" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00554335, -0.00791937, -0.00125784 )
-
-[node name="Area" type="Area" parent="."]
+[node name="Area" type="Area"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 memory_name = "FilmExample"
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
+[node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-[connection signal="body_entered" from="Area" to="Area" method="_on_Area_body_entered"]
-[connection signal="body_exited" from="Area" to="Area" method="_on_Area_body_exited"]
+[connection signal="body_entered" from="." to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Area_body_exited"]

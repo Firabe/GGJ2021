@@ -11,7 +11,7 @@ func _ready():
 	hide()
 
 
-func start_watch():
+func start_watch(path):
 	show()
 	play()
 

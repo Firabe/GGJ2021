@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/Film.gd" type="Script" id=1]
 [ext_resource path="res://Assets/movies/Stadt V1_libtheora.ogv" type="VideoStream" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://Sounds/Harp.wav" type="AudioStream" id=7]
 [ext_resource path="res://Sounds/Music/track1.wav" type="AudioStream" id=8]
 [ext_resource path="res://Sounds/Ambient/city.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/movies/Brücke_Vignette_final.ogv" type="VideoStream" id=10]
+[ext_resource path="res://Assets/movies/Stadt_3.ogv" type="VideoStream" id=11]
+[ext_resource path="res://Assets/movies/Intro_Blur_final.ogv" type="VideoStream" id=12]
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -36,7 +39,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FilmExample" type="VideoPlayer" parent="."]
+[node name="Stadt" type="VideoPlayer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 11 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Brücke" type="VideoPlayer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 10 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Intro" type="VideoPlayer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 12 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wald" type="VideoPlayer" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -46,7 +79,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BildExample" type="TextureRect" parent="."]
+[node name="Strand" type="VideoPlayer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bild" type="TextureRect" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -69,5 +112,28 @@ stream = ExtResource( 7 )
 [node name="Ambient" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource( 9 )
 autoplay = true
-[connection signal="finished" from="FilmExample" to="FilmExample" method="_on_FilmExample_finished"]
+
+[node name="MenuScreen" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="MenuScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -19.0
+margin_top = -10.0
+margin_right = 19.0
+margin_bottom = 10.0
+text = "Play"
+[connection signal="finished" from="Stadt" to="Stadt" method="_on_FilmExample_finished"]
+[connection signal="finished" from="Brücke" to="Brücke" method="_on_FilmExample_finished"]
+[connection signal="finished" from="Intro" to="Intro" method="_on_FilmExample_finished"]
+[connection signal="finished" from="Wald" to="Wald" method="_on_FilmExample_finished"]
+[connection signal="finished" from="Strand" to="Strand" method="_on_FilmExample_finished"]
 [connection signal="finished" from="Music" to="Music" method="_on_Music_finished"]
+[connection signal="pressed" from="MenuScreen/Button" to="." method="_on_Button_pressed"]
