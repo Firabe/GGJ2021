@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/Film.gd" type="Script" id=1]
-[ext_resource path="res://Assets/movies/Stadt V1_libtheora.ogv" type="VideoStream" id=2]
+[ext_resource path="res://Assets/movies/Wald_Blur_final.ogv" type="VideoStream" id=2]
 [ext_resource path="res://scripts/memory_control.gd" type="Script" id=3]
 [ext_resource path="res://scripts/Bild.gd" type="Script" id=4]
 [ext_resource path="res://Assets/images/springspiel.png" type="Texture" id=5]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/movies/Brücke_Vignette_final.ogv" type="VideoStream" id=10]
 [ext_resource path="res://Assets/movies/Stadt_3.ogv" type="VideoStream" id=11]
 [ext_resource path="res://Assets/movies/Intro_Blur_final.ogv" type="VideoStream" id=12]
+[ext_resource path="res://Assets/movies/Strand_2.ogv" type="VideoStream" id=13]
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -83,7 +84,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-stream = ExtResource( 2 )
+stream = ExtResource( 13 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
