@@ -11,7 +11,8 @@ func _ready():
 	hide()
 
 
-func start_watch():
+func start_watch(path):
+	texture = load("res://Assets/images/" + path)
 	show()
 	var timer = get_parent().get_node("ImgCloseTimer")
 	timer.connect("timeout", self, "_on_ImgCloseTimer_timeout")

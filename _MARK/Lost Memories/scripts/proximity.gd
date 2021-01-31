@@ -1,7 +1,8 @@
 extends Spatial
 
-export(String) var memory_name = ""
+export(String) var memory_name = "Bild"
 export(String) var memory_message = "Space"
+export(String) var image_path = "nebel.png"
 export(int) var music_track = -1
 export(String) var ambient_track = ""
 
@@ -12,8 +13,7 @@ export(String) var ambient_track = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if memory_message == null:
-		memory_message = "Space"
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,7 +28,7 @@ func _on_Area_body_entered(body):
 	if ambient_track != "":
 		mem_control.change_ambient(ambient_track)
 	if memory_name != "":
-		mem_control.set_available_memory(memory_name, memory_message)
+		mem_control.set_available_memory(memory_name, memory_message, image_path)
 
 
 func _on_Area_body_exited(body):
